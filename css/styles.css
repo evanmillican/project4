@@ -1,0 +1,91 @@
+body {
+  background-color: #000;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 5% auto auto 5%;
+  grid-template-rows: 650px 500px repeat(4, 1fr);
+  grid-gap: 0;
+}
+
+.header{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-image: url(/img/bannerimg.jpg);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text{
+  opacity: .8;
+}
+
+.top-artists{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin-top: 30px;
+}
+
+h1 {
+  font-family: 'Yeseva One', cursive;
+  color: #fff;
+  font-size: 20em;
+  margin: 5px;
+}
+
+h2 {
+  font-family: 'Yeseva One', cursive;
+  color: #fff;
+  font-size: 5em;
+  margin: 5px;
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.cards{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+.thumbnail{
+  flex-basis: 20%;
+  max-width: 20%;
+  height: auto;
+  margin-right: 15px;
+}
+
+
+
+
+
+
+@media (max-width: 700px){
+  .wrapper{
+    display: grid;
+    grid-template-columns: 5% auto auto 5%;
+
+  }
+}

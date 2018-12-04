@@ -12,7 +12,7 @@ body {
 .wrapper{
   display: grid;
   grid-template-columns: 5% auto auto 5%;
-  grid-template-rows: 650px 500px repeat(4, 1fr);
+  grid-template-rows: 650px repeat(5, auto);
   grid-gap: 0;
 }
 
@@ -37,24 +37,72 @@ body {
   opacity: .8;
 }
 
+.intro{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .top-artists{
   grid-column-start: 2;
   grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
   margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.news{
+  grid-column-start: 2;
+  grid-column-end:4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin-bottom: 30px;
+}
+
+.examples{
+  grid-column-start: 2;
+  grid-column-end:4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  margin-bottom: 30px;
+}
+
+#artistresults{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 {
   font-family: 'Yeseva One', cursive;
   color: #fff;
-  font-size: 20em;
+  font-size: 10em;
   margin: 5px;
 }
 
 h2 {
   font-family: 'Yeseva One', cursive;
   color: #fff;
-  font-size: 5em;
+  font-size: 2.5em;
   margin: 5px;
+}
+
+h3{
+  font-family: 'Yeseva One', cursive;
+  color: #fff;
+  font-size: 20px;
+  margin: 5px;
+}
+
+h4{
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 15px;
 }
 
 p{
@@ -62,12 +110,8 @@ p{
   color: #fff;
 }
 
-.cards{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  margin: 10px;
-  box-shadow: 2px 2px 5px #ccc;
+a{
+  text-decoration: none;
 }
 
 .thumbnail{
@@ -76,6 +120,40 @@ p{
   height: auto;
   margin-right: 15px;
 }
+
+.cards{
+  background: #212121;
+  border: 1px solid #3b3b3b;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-flex;
+}
+
+.cards:hover {
+  background: #3b3b3b;
+  transition: .5s ease;
+}
+
+.artist-cards{
+  background: #212121;
+  border: 1px solid #3b3b3b;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.artist-cards:hover {
+  background: #3b3b3b;
+  transition: .5s ease;
+}
+
+
+
 
 
 

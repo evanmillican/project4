@@ -3,7 +3,7 @@ $(function(){
 
   var url1 = 'http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=emo+rap&limit=10&api_key=90a3ca32719b4f3dbbdb70e210784219&format=json';
   var url2 = 'https://newsapi.org/v2/everything?q=emo%20rap&sources=mtv-news,buzzfeed,entertainment-weekly,vice-news&sortBy=relevance&apiKey=cfc8e67278ab4b87aab2d9429f5acac0';
-  var url3 = '';
+  var url3 = 'https://orion.apiseeds.com/api/music/lyric/XXXTentacion/jocelyn flores?apikey=XMyu1OJbKppZHI98U6h5mgBnRglxIegaezrvOLYcf79oSnbMEJXwpDym3y30iCxC';
   var lastfm_data = [];
   var mtv_data = [];
   var lyric_data = [];
@@ -83,6 +83,7 @@ $.ajax({
   success:function(mtv_data){
     console.log(mtv_data.articles);
     articles = mtv_data.articles;
+    html = '';
 
     articles.forEach(function(article){
       console.log(article.title);
@@ -96,7 +97,38 @@ $.ajax({
       html += '</div>'
 
     });
-    $('#newsresults').html(html);
+    $('#newsresults').append(html);
+
+  }
+
+
+});
+
+
+$.ajax({
+  type:'GET',
+  url: url3,
+  dataType:'json',
+  async:true,
+  data:lyric_data,
+  success:function(lyric_data){
+    console.log(lyric_data.result);
+    song = lyric_data.result;
+    html = '';
+
+    html += '<div class="lyrics">';
+    html +=   '<h3>' + song.track.name + '</h3>';
+    html +=   '<h4>By: ' + song.artist.name + '</h4>';
+    html +=     '<div class="lyrics-text">';
+    html +=       '<p>' + song.track.text + '</p>';
+    html +=     '</div>';
+    html +=   '<h5>' + song.copyright.notice + '</h5>';
+    html += '</div>'
+
+
+
+
+    $('#lyricsresults').html(html);
 
   }
 

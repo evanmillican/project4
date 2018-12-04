@@ -12,7 +12,7 @@ body {
 .wrapper{
   display: grid;
   grid-template-columns: 5% auto auto 5%;
-  grid-template-rows: 650px repeat(5, auto);
+  grid-template-rows: 650px repeat(6, auto);
   grid-gap: 0;
 }
 
@@ -43,7 +43,11 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
   margin-top: 30px;
-  margin-bottom: 30px;
+}
+
+.intro p{
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .top-artists{
@@ -55,19 +59,44 @@ body {
   margin-bottom: 30px;
 }
 
+.top-artists p{
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.hero-img{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-image: url(/img/post2.jpg);
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .news{
   grid-column-start: 2;
   grid-column-end:4;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
   margin-bottom: 30px;
+}
+
+.news p{
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .examples{
   grid-column-start: 2;
   grid-column-end:4;
-  grid-row-start: 5;
-  grid-row-end: 6;
+  grid-row-start: 6;
+  grid-row-end: 7;
   margin-bottom: 30px;
 }
 
@@ -76,6 +105,10 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#lyricsresults{
+  margin-top: 30px;
 }
 
 h1 {
@@ -105,13 +138,25 @@ h4{
   font-size: 15px;
 }
 
+h5{
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-size: 10px;
+}
+
 p{
   font-family: 'Roboto', sans-serif;
   color: #fff;
+  line-height: 1.6;
 }
 
 a{
   text-decoration: none;
+}
+
+.credit{
+  text-align: right;
+  margin: 5px;
 }
 
 .thumbnail{
@@ -128,6 +173,8 @@ a{
   padding: 10px;
   margin: 10px;
   display: inline-flex;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .cards:hover {
@@ -150,6 +197,22 @@ a{
 .artist-cards:hover {
   background: #3b3b3b;
   transition: .5s ease;
+}
+
+.lyrics{
+  margin-left: 70px;
+  margin-right: 70px;
+  text-align: center;
+}
+
+.lyrics-text{
+  margin: auto;
+  background: #212121;
+  border: 1px solid #3b3b3b;
+  border-radius: 4px;
+  padding: 10px;
+  width: 400px;
+  text-align: center;
 }
 
 

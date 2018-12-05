@@ -12,8 +12,55 @@ $(function(){
   var artist = [];
   var i;
 
-//last fm api
 
+//jump menu
+
+
+$('a[href*="#"]').bind('click', function(e) {
+		e.preventDefault();
+
+		var target = $(this).attr("href");
+
+		$('html, body').stop().animate({
+				scrollTop: $(target).offset().top
+		}, 600, function() {
+				location.hash = target;
+		});
+
+		return false;
+});
+
+
+$(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+	if (scrollDistance >= 60) {
+				$('nav').fadeIn("fast");
+		} else {
+				$('nav').fadeOut("fast");
+		}
+
+		$('.page-section').each(function(i) {
+				if ($(this).position().top <= scrollDistance) {
+						$('.navigation a.active').removeClass('active');
+						$('.navigation a').eq(i).addClass('active');
+				}
+		});
+}).scroll();
+
+//fade in on scroll
+
+
+  ScrollReveal().reveal('.header-text', {delay: 300});
+  ScrollReveal().reveal('.intro', {delay: 500});
+  ScrollReveal().reveal('.top-artists', {delay: 500});
+  ScrollReveal().reveal('.top-5', {delay: 500});
+  ScrollReveal().reveal('.news', {delay: 500});
+  ScrollReveal().reveal('.examples', {delay: 500});
+  ScrollReveal().reveal('.closing', {delay: 500});
+
+
+//last fm api
 
 
 $.ajax({
@@ -134,9 +181,6 @@ $.ajax({
 
 
 });
-
-
-
 
 
 
